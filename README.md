@@ -1,2 +1,2 @@
 # summer-project
-CLI realizado con JAVA, Hibernate y Spring Shell
+CLI gestor de tareas realizado con JAVA, Hibernate y Spring Shell
