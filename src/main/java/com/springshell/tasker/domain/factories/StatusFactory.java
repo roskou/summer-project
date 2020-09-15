@@ -1,9 +1,7 @@
 package com.springshell.tasker.domain.factories;
 
 import com.springshell.tasker.domain.entities.StatusEntity;
-import com.springshell.tasker.domain.entities.TaskEntity;
 import com.springshell.tasker.domain.models.StatusModel;
-import com.springshell.tasker.domain.models.TaskModel;
 import org.springframework.stereotype.Component;
 
 @Component

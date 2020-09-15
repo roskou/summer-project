@@ -4,15 +4,19 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/task_app_db?serverTimezone=UTC</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">secret1234</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/tasksdb?serverTimezone=UTC</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">secret1234</property>
 
         <mapping class="com.springshell.tasker.domain.entities.StatusEntity"/>
-        <mapping class="com.springshell.tasker.domain.entities.TaskEntity"/>
-        <mapping class="com.springshell.tasker.domain.entities.UserEntity"/>
+        <mapping class="com.springshell.tasker.domain.entities.TasksEntity"/>
+        <mapping class="com.springshell.tasker.domain.entities.UsersEntity"/>
+        <mapping class="com.springshell.tasker.domain.entities.TasksEntity"/>
+        <mapping class="com.springshell.tasker.domain.entities.UsersEntity"/>
+
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

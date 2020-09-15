@@ -1,14 +1,14 @@
 package com.springshell.tasker.domain.factories;
 
 import com.springshell.tasker.domain.entities.StatusEntity;
-import com.springshell.tasker.domain.entities.UserEntity;
+import com.springshell.tasker.domain.entities.UsersEntity;
 import com.springshell.tasker.domain.models.UserModel;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserFactory {
-    public UserEntity createEntity(UserModel userModel) {
-        UserEntity userEntity = new UserEntity();
+    public UsersEntity createEntity(UserModel userModel) {
+        UsersEntity userEntity = new UsersEntity();
 
         userEntity.setId(userModel.getId());
         userEntity.setName(userModel.getName());
@@ -19,7 +19,7 @@ public class UserFactory {
 
     }
 
-    public UserModel createModel(UserEntity userEntity) {
+    public UserModel createModel(UsersEntity userEntity) {
         UserModel userModel = new UserModel();
 
         userModel.setId(userEntity.getId());

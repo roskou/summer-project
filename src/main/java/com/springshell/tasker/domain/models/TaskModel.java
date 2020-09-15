@@ -1,18 +1,31 @@
 package com.springshell.tasker.domain.models;
 
 
+import com.springshell.tasker.ui.shell.LocalDateFormatter;
+
+import java.sql.Timestamp;
+
+
 public class TaskModel {
     private Long id;
     private UserModel manager;
     private StatusModel status;
     private String title;
     private String description;
-    private String date;
+    private Timestamp date;
 
     public TaskModel(){};
 
-    public TaskModel(Long id, UserModel manager, StatusModel status, String title, String description, String date) {
+    public TaskModel(Long id, UserModel manager, StatusModel status, String title, String description, Timestamp date) {
         this.id = id;
+        this.manager = manager;
+        this.status = status;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+    }
+
+    public TaskModel(UserModel manager, StatusModel status, String title, String description, Timestamp date) {
         this.manager = manager;
         this.status = status;
         this.title = title;
@@ -45,11 +58,11 @@ public class TaskModel {
         this.description = description;
     }
 
-    public String getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 
@@ -67,5 +80,13 @@ public class TaskModel {
 
     public void setStatus(StatusModel status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return " Tarea='" + title +
+                ", Descripcion='" + description +
+                ", Fecha= " + date +
+                '}' + getManager().toString();
     }
 }

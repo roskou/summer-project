@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "status", schema = "tasksdb", catalog = "")
-public class StatusEntity {
+@Table(name = "users", schema = "tasksdb", catalog = "")
+public class UsersEntity {
     private long id;
     private String name;
-    private String description;
+    private String lastname;
+    private String email;
     private Collection<TasksEntity> tasksById;
 
     @Id
@@ -32,13 +33,23 @@ public class StatusEntity {
     }
 
     @Basic
-    @Column(name = "description", nullable = true, length = 100)
-    public String getDescription() {
-        return description;
+    @Column(name = "lastname", nullable = true, length = 50)
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    @Basic
+    @Column(name = "email", nullable = true, length = 50)
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -46,11 +57,12 @@ public class StatusEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        StatusEntity that = (StatusEntity) o;
+        UsersEntity that = (UsersEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
     }
@@ -59,11 +71,12 @@ public class StatusEntity {
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 
-    @OneToMany(mappedBy = "statusByStatusId")
+    @OneToMany(mappedBy = "usersByUserId")
     public Collection<TasksEntity> getTasksById() {
         return tasksById;
     }
