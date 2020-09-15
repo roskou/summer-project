@@ -27,7 +27,7 @@ public class TaskFactory {
 
         TasksEntity tasksEntity = new TasksEntity();
 
-        tasksEntity.setId(taskModel.getId());
+        //tasksEntity.setId(taskModel.getId());
         tasksEntity.setDate(taskModel.getDate());
         tasksEntity.setDescription(taskModel.getDescription());
         tasksEntity.setTitle(taskModel.getTitle());

@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
-
-import java.sql.Timestamp;
 import java.util.List;
 
 @ShellComponent
@@ -51,18 +49,30 @@ public class EchoCommand {
         return;
     }
     @ShellMethod("Inserta una nueva Tarea")
-    public void insertar() {
-        //shellHelper.printError("\n COMANDO NO IMPLEMENTADO !!\n");
-        TaskModel taskmodel = new TaskModel(new UserModel("pepito", "perez", "dsd@df.com"),new StatusModel("a","b"),"Limpiar la clase","hasdgajhsdfgjasfd", "2020-10-1 00:00");
+    public void insertar(@ShellOption({"-t", "--titulo"}) String titulo) {
+
+        TaskModel taskmodel = new TaskModel();
+        taskmodel.setDate(null);
+        taskmodel.setTitle(titulo);
+        taskmodel.setDescription(titulo);
+        taskmodel.setManager(null);
+        taskmodel.setStatus(null);
+
         try {
+            shellHelper.printInfo("hello! ");
             taskService.insertOrUpdate(taskmodel);
 
-shellHelper.printWarning("·TAREA INSERTADA");
+
         }catch(Exception e){
             shellHelper.printError("BOOM!");
-            System.out.println(e.getLocalizedMessage());
-            System.out.println(e.getLocalizedMessage());
+            //shellHelper.printError(e.getLocalizedMessage());
+
         }
+    }
+
+    @ShellMethod("Actualiza los datod de una  Tarea")
+    public void actualizar(@ShellOption({"-i", "--id"}) String id) {
+
     }
 
 

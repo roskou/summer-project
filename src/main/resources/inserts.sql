@@ -1,0 +1,3 @@
+INSERT INTO STATUS VALUES(DEFAULT,"Delivered","Tarea entregada a cliente"),(DEFAULT,"In Process", "Tarea en fase de producción"),(DEFAULT,"Testing", "Fase de pruebas previa a la entrega"),(DEFAULT,"Idea", "Tarea sólo expuesta como idea");
+INSERT INTO USERS VALUES(DEFAULT,"Oscar","Orellana","oorellana@gmail.com"),(DEFAULT,"Adrian","Hitos","hiitos80@gmail.com");
+INSERT INTO TASKS VALUES(DEFAULT,1,1,"Entrega proyecto summer","Hibernacle, java, cli...","2020-09-01 00:00:01"),(DEFAULT,2,1,"Entrega proyecto summer","Hibernacle, java, cli...","2020-09-01 00:00:01"),(DEFAULT,2,3,"Entrega DDBB","Enfocado principalmente a DDBB","2020-09-01 00:00:01");

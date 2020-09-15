@@ -14,7 +14,8 @@ public class TaskModel {
     private String description;
     private Timestamp date;
 
-    public TaskModel(){};
+    public TaskModel(){
+    };
 
     public TaskModel(Long id, UserModel manager, StatusModel status, String title, String description, Timestamp date) {
         this.id = id;
@@ -87,6 +88,6 @@ public class TaskModel {
         return " Tarea='" + title +
                 ", Descripcion='" + description +
                 ", Fecha= " + date +
-                '}' + getManager().toString();
+                "  Manager: " + getManager().getName();
     }
 }

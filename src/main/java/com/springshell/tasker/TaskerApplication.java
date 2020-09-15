@@ -12,7 +12,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class TaskerApplication {
 
     public static void main(String[] args) {
-        System.setProperty("org.jline.terminal.dumb", "true");
+        //System.setProperty("org.jline.terminal.dumb", "true");
         ConfigurableApplicationContext context = SpringApplication.run(TaskerApplication.class, args);
     }
 
